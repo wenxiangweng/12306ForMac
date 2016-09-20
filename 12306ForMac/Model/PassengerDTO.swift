@@ -47,9 +47,9 @@ class PassengerDTO:NSObject {
     override init(){
         isChecked = false
         
-        let x=random()%5
+        let x=arc4random()%5
         let nameArr = ["lin1","lin2","lin3","lin4","lin5"]
-        passenger_name = nameArr[x]
+//        passenger_name = nameArr[x]
         
     }
     

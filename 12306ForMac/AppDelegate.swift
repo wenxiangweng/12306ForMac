@@ -13,16 +13,16 @@ import Cocoa
 let logger: XCGLogger = {
     // Setup XCGLogger
     let log = XCGLogger.defaultInstance()
-    let logPath: NSString = ("~/Desktop/12306ForMac_log.txt" as NSString).stringByExpandingTildeInPath
+    let logPath: NSString = ("~/Desktop/12306ForMac_log.txt" as NSString).expandingTildeInPath as NSString
     log.xcodeColors = [
-        .Verbose: .lightGrey,
-        .Debug: .darkGrey,
-        .Info: .darkGreen,
-        .Warning: .orange,
-        .Error: XCGLogger.XcodeColor(fg: NSColor.redColor(), bg: NSColor.whiteColor()), // Optionally use an NSColor
-        .Severe: XCGLogger.XcodeColor(fg: (255, 255, 255), bg: (255, 0, 0)) // Optionally use RGB values directly
+        .verbose: .lightGrey,
+        .debug: .darkGrey,
+        .info: .darkGreen,
+        .warning: .orange,
+        .error: XCGLogger.XcodeColor(fg: NSColor.red, bg: NSColor.white), // Optionally use an NSColor
+        .severe: XCGLogger.XcodeColor(fg: (255, 255, 255), bg: (255, 0, 0)) // Optionally use RGB values directly
     ]
-    log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath)
+    log.setup(.debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath)
     
     return log
 }()
@@ -40,8 +40,8 @@ let DidSendAutoSubmitMessageNotification = "com.12306.DidSendAutoSubmitMessageNo
 
     var mainController:MainWindowController?
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-    NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions":NSNumber(bool: true)])
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions":NSNumber(value: true as Bool)])
         
         Fabric.with([Crashlytics.self])
         
@@ -54,11 +54,11 @@ let DidSendAutoSubmitMessageNotification = "com.12306.DidSendAutoSubmitMessageNo
         
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     
-    func applicationShouldTerminateAfterLastWindowClosed(sender:NSApplication)->Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender:NSApplication)->Bool {
         return true
     }
     

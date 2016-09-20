@@ -64,7 +64,7 @@ class OrderDTO:NSObject{
     
     var payStatus:String{
         var name = ""
-        if let limitTime = pay_limit_time, status = ticket_status_name{
+        if let limitTime = pay_limit_time, let status = ticket_status_name{
             name = "\(status)(请在 \(limitTime) 前支付)"
         }
         return name

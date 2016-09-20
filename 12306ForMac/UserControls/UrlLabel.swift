@@ -23,33 +23,33 @@ class UrlLabel: NSTextField {
     }
     
     func commonInit(){
-        self.selectable = false
-        self.editable = false
+        self.isSelectable = false
+        self.isEditable = false
         self.drawsBackground = false
         //        self.bordered =
         
-        self.textColor = NSColor.blueColor()
+        self.textColor = NSColor.blue
 //        [self setBordered:NSNoBorder];
 //        [[self cell] setControlSize:NSSmallControlSize];
 //        [[self cell] setLineBreakMode:NSLineBreakByTruncatingMiddle];
     }
 
     override func awakeFromNib() {
-        self.textColor = NSColor.blueColor()
+        self.textColor = NSColor.blue
     }
     
-    override func mouseUp(theEvent: NSEvent) {
+    override func mouseUp(with theEvent: NSEvent) {
         var curPoint = theEvent.locationInWindow
-        curPoint = self.convertPoint(curPoint, fromView: nil)
+        curPoint = self.convert(curPoint, from: nil)
         if !NSPointInRect(curPoint, self.bounds) {
             return
         }
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: urlString)!);
+        NSWorkspace.shared().open(URL(string: urlString)!);
     }
     
     override func resetCursorRects() {
         super.resetCursorRects()
-        self.addCursorRect(self.bounds, cursor: NSCursor.pointingHandCursor())
+        self.addCursorRect(self.bounds, cursor: NSCursor.pointingHand())
     }
     
 }

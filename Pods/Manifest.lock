@@ -1,47 +1,40 @@
 PODS:
-  - Alamofire (3.2.0)
-  - Crashlytics (3.7.0):
+  - Alamofire (4.0.0)
+  - Crashlytics (3.8.1):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.6)
-  - OMGHTTPURLRQ (3.1.1):
-    - OMGHTTPURLRQ/RQ (= 3.1.1)
-  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
-  - OMGHTTPURLRQ/RQ (3.1.1):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.0.2):
-    - PromiseKit/Foundation (= 3.0.2)
-    - PromiseKit/QuartzCore (= 3.0.2)
-    - PromiseKit/UIKit (= 3.0.2)
-  - PromiseKit/CorePromise (3.0.2)
-  - PromiseKit/Foundation (3.0.2):
-    - OMGHTTPURLRQ (~> 3.1.0)
+  - Fabric (1.6.8)
+  - PromiseKit (4.0.1):
+    - PromiseKit/Foundation (= 4.0.1)
+    - PromiseKit/QuartzCore (= 4.0.1)
+    - PromiseKit/UIKit (= 4.0.1)
+  - PromiseKit/CorePromise (4.0.1)
+  - PromiseKit/Foundation (4.0.1):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.2):
+  - PromiseKit/QuartzCore (4.0.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.2):
+  - PromiseKit/UIKit (4.0.1):
     - PromiseKit/CorePromise
-  - Realm (0.98.1):
-    - Realm/Headers (= 0.98.1)
-  - Realm/Headers (0.98.1)
-  - RealmSwift (0.98.1):
-    - Realm (= 0.98.1)
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
+  - RealmSwift (1.1.0):
+    - Realm (= 1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire (~> 4.0)
   - Crashlytics
   - Fabric
-  - PromiseKit (~> 3.0)
-  - RealmSwift
+  - PromiseKit (~> 4.0)
+  - RealmSwift (~> 1.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
-  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
-  Realm: ca4a4122e939e228e10694fc49011386cb2ecb07
-  RealmSwift: 7d3c7033427816a2c3417ba0d004d694987e503a
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
+  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 254920fba1100f78fef5983f9a5f36177dd70eec
+
+COCOAPODS: 1.1.0.rc.2

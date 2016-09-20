@@ -15,8 +15,8 @@ let D_SEAT_TYPE_NAME_DIC = ["商务座": "9", "特等座": "P", "一等座": "M"
 //普通车
 let K_SEAT_TYPE_NAME_DIC = ["高级软卧": "6","软卧": "4", "硬卧": "3", "软座": "2", "硬座": "1", "无座": "1"]
 
-func QuerySeatTypeDicBy(trainCode:String)->[String:String] {
-    if (trainCode.containsString("G"))||(trainCode.containsString("D")||(trainCode.containsString("C"))) {
+func QuerySeatTypeDicBy(_ trainCode:String)->[String:String] {
+    if (trainCode.contains("G"))||(trainCode.contains("D")||(trainCode.contains("C"))) {
         return D_SEAT_TYPE_NAME_DIC;
     }
     else {
@@ -24,12 +24,12 @@ func QuerySeatTypeDicBy(trainCode:String)->[String:String] {
     }
 }
 
-func Convert2StartTrainDateStr(dateStr: String)->String{
+func Convert2StartTrainDateStr(_ dateStr: String)->String{
     var formateStr = dateStr
-    var index = dateStr.startIndex.advancedBy(4)
-    formateStr.insert("-", atIndex: index)
-    index = dateStr.startIndex.advancedBy(7)
-    formateStr.insert("-", atIndex: index)
+    var index = dateStr.characters.index(dateStr.startIndex, offsetBy: 4)
+    formateStr.insert("-", at: index)
+    index = dateStr.characters.index(dateStr.startIndex, offsetBy: 7)
+    formateStr.insert("-", at: index)
     
     return formateStr
 }

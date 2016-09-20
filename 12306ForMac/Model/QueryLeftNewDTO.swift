@@ -110,11 +110,11 @@ class QueryLeftNewDTO:NSObject {
     
     var hasTicket:Bool = false
     
-    var startTrainDate:NSDate!
-    private func getStartTrainDate(dateStr:String)->NSDate? {
-        let dateFormatter = NSDateFormatter()
+    var startTrainDate:Date!
+    fileprivate func getStartTrainDate(_ dateStr:String)->Date? {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyymmdd"
-        return dateFormatter.dateFromString(dateStr)
+        return dateFormatter.date(from: dateStr)
     }
     
     //"20150926" - > "2015-09-26"
@@ -122,11 +122,11 @@ class QueryLeftNewDTO:NSObject {
     
     //"Fri Dec 04 2015 08:00:00 GMT+0800 (中国标准时间)"
     var jsStartTrainDateStr:String!
-    private func getJsStartTrainDateStr(date:NSDate)->String {
-        let dateFormatter = NSDateFormatter()
+    fileprivate func getJsStartTrainDateStr(_ date:Date)->String {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE MMM dd yyyy '08:00:00' 'GMT'+'0800' '(中国标准时间)'"
-        dateFormatter.locale = NSLocale(localeIdentifier: "en-US")
-        return dateFormatter.stringFromDate(date)
+        dateFormatter.locale = Locale(identifier: "en-US")
+        return dateFormatter.string(from: date)
     }
     
     func isTicketInvalid() -> Bool {
@@ -193,7 +193,7 @@ class QueryLeftNewDTO:NSObject {
         buttonTextInfo = json["buttonTextInfo"].string
         
         if SecretStr != nil{
-            SecretStr = SecretStr!.stringByRemovingPercentEncoding
+            SecretStr = SecretStr!.removingPercentEncoding
         }
         
         isStartStation = (FromStationCode == start_station_telecode)
@@ -209,18 +209,18 @@ class QueryLeftNewDTO:NSObject {
         setupHasTicket()
     }
     
-    func hasTicketForSeatTypeFilterKey(key:String) -> Bool {
+    func hasTicketForSeatTypeFilterKey(_ key:String) -> Bool {
         for val in seatTypePairDic.values {
-            if ((key.containsString(val.id1))&&(val.number > 0)) {
+            if ((key.contains(val.id1))&&(val.number > 0)) {
                 return true
             }
         }
         return false
     }
     
-    func getSeatTypeNameByFilterKey(key:String) -> String? {
+    func getSeatTypeNameByFilterKey(_ key:String) -> String? {
         for val in seatTypePairDic.values {
-            if ((key.containsString(val.id1))&&(val.number > 0)) {
+            if ((key.contains(val.id1))&&(val.number > 0)) {
                 return val.id1
             }
         }
@@ -242,7 +242,7 @@ class QueryLeftNewDTO:NSObject {
         }
         let yp_info = self.yp_info!
         
-        let totalLength = yp_info.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        let totalLength = yp_info.lengthOfBytes(using: String.Encoding.utf8)
         if totalLength == 0 {
             return
         }
@@ -281,17 +281,17 @@ M/12075/0100
         let totalTicketNumber = totalLength / ticketLength
         
         for _ in 1...totalTicketNumber {
-            idPrevPos = idPrevPos.advancedBy(idOffset)
-            idNextPos = idPrevPos.advancedBy(idLength)
-            id2 = yp_info.substringWithRange(idPrevPos..<idNextPos)
+            idPrevPos = yp_info.index(idPrevPos, offsetBy: idOffset)// idPrevPos.advancedBy(idOffset)
+            idNextPos = yp_info.index(idPrevPos, offsetBy: idLength)// idPrevPos.advancedBy(idLength)
+            id2 = yp_info.substring(with: idPrevPos..<idNextPos)
             
-            pricePrevPos = pricePrevPos.advancedBy(priceOffset)
-            priceNextPos = pricePrevPos.advancedBy(priceLength)
-            price = Double(yp_info.substringWithRange(pricePrevPos..<priceNextPos))! / 10
+            pricePrevPos = yp_info.index(pricePrevPos, offsetBy: priceOffset)// pricePrevPos.advancedBy(priceOffset)
+            priceNextPos = yp_info.index(pricePrevPos, offsetBy: priceLength)// pricePrevPos.advancedBy(priceLength)
+            price = Double(yp_info.substring(with: pricePrevPos..<priceNextPos))! / 10
         
-            numberPrevPos = numberPrevPos.advancedBy(numberOffset)
-            numberNextPos = numberPrevPos.advancedBy(numberLength)
-            number = Int(yp_info.substringWithRange(numberPrevPos..<numberNextPos))!
+            numberPrevPos = yp_info.index(numberPrevPos, offsetBy: numberOffset)// numberPrevPos.advancedBy(numberOffset)
+            numberNextPos = yp_info.index(numberPrevPos, offsetBy: numberLength)// numberPrevPos.advancedBy(numberLength)
+            number = Int(yp_info.substring(with: numberPrevPos..<numberNextPos))!
             
             if number >= 3000 {
                 id1 = "无座"
@@ -305,9 +305,9 @@ M/12075/0100
                 }
             }
             
-            pricePrevPos = pricePrevPos.advancedBy(ticketLength - priceOffset)
-            numberPrevPos = numberPrevPos.advancedBy(ticketLength - numberOffset)
-            idPrevPos = idPrevPos.advancedBy(ticketLength - idOffset)
+            pricePrevPos = yp_info.index(pricePrevPos, offsetBy: ticketLength - priceOffset)// pricePrevPos.advancedBy(ticketLength - priceOffset)
+            numberPrevPos = yp_info.index(numberPrevPos, offsetBy: ticketLength - numberOffset)// numberPrevPos.advancedBy(ticketLength - numberOffset)
+            idPrevPos = yp_info.index(idPrevPos, offsetBy: ticketLength - idOffset)// idPrevPos.advancedBy(ticketLength - idOffset)
             
             let seatType = SeatTypePair(id1: id1, id2: id2, number: number, price: price)
             seatTypePairDic[id1] = seatType

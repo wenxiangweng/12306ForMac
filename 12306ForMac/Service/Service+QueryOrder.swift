@@ -12,25 +12,25 @@ import PromiseKit
 
 extension Service{
     
-    func queryHistoryOrderFlow(success success:()->(), failure:()->()){
-        var promise = self.queryOrderInit().then({()->Promise<Int> in
+    func queryHistoryOrderFlow(success:@escaping ()->(), failure:@escaping ()->()){
+        var promise = self.queryOrderInit().then(execute: {()->Promise<Int> in
             MainModel.historyOrderList.removeAll()
             return self.queryMyOrderWithPageIndex(0)
         })
         
-        promise.then({ totalNum -> Promise<Int> in
+        promise.then{ totalNum -> Promise<Int> in
             let count = (totalNum - 1) / 8
             if count > 0 {
                 for i in 1...count{
-                    promise = promise.then({_ -> Promise<Int> in self.queryMyOrderWithPageIndex(i)})
+                    promise = promise.then{_ -> Promise<Int> in self.queryMyOrderWithPageIndex(i)}
                 }
             }
             return promise
-        }).then({_ in
+        }.then{_ in
             success()
-        }).error({_ in
+        }.catch{_ in
             failure()
-        })
+        }
     }
     
     func queryOrderInit()->Promise<Void>{
@@ -38,24 +38,26 @@ extension Service{
             let url = "https://kyfw.12306.cn/otn/queryOrder/init"
             let params = ["_json_att":""]
             let headers = ["refer": "https://kyfw.12306.cn/otn/index/initMy12306"]
-            Service.Manager.request(.POST, url, parameters: params, headers:headers).responseJSON(completionHandler:{response in
-                fulfill()
+            Service.Manager
+                .request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON(completionHandler:{response in
+                    fulfill()
             })
         }
     }
     
-    func queryMyOrderWithPageIndex(index:Int)->Promise<Int>{
+    func queryMyOrderWithPageIndex(_ index:Int)->Promise<Int>{
         return Promise{ fulfill, reject in
             let url = "https://kyfw.12306.cn/otn/queryOrder/queryMyOrder"
             var params = QueryOrderParam()
             params.pageIndex = index
             
             let headers = ["refer": "https://kyfw.12306.cn/otn/queryOrder/init"]
-            Service.Manager.request(.POST, url, parameters: params.ToPostParams(), headers:headers).responseJSON(completionHandler:{response in
+            Service.Manager.request(url, method: .post, parameters: params.ToPostParams(), encoding: JSONEncoding.default, headers:headers).responseJSON(completionHandler:{response in
                 switch (response.result){
-                case .Failure(let error):
+                case .failure(let error):
                     reject(error)
-                case .Success(let data):
+                case .success(let data):
                     let jsonData = JSON(data)["data"]
                     let orderDBList = JSON(data)["data"]["orderDBList"]
                     guard orderDBList.count > 0 else {
@@ -74,15 +76,15 @@ extension Service{
         }
     }
     
-    func queryNoCompleteOrderFlow(success success:()->(), failure:()->()){
+    func queryNoCompleteOrderFlow(success:@escaping ()->(), failure:@escaping ()->()){
         
-        self.queryOrderInitNoComplete().then({() -> Promise<String> in
+        self.queryOrderInitNoComplete().then{_ in
             return self.queryMyOrderNoComplete()
-        }).then({_ in
+        }.then{_ in
             success()
-        }).error({_ in
+        }.catch{_ in
             failure()
-        })
+        }
     }
     
     func queryOrderInitNoComplete()->Promise<Void>{
@@ -90,7 +92,7 @@ extension Service{
             let url = "https://kyfw.12306.cn/otn/queryOrder/initNoComplete"
             let params = ["_json_att":""]
             let headers = ["refer": "https://kyfw.12306.cn/otn/index/initMy12306"]
-            Service.Manager.request(.POST, url, parameters: params, headers:headers).responseString(completionHandler:{response in
+            Service.Manager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers:headers).responseString(completionHandler:{response in
                 fulfill()
             })
         }
@@ -101,11 +103,11 @@ extension Service{
             let url = "https://kyfw.12306.cn/otn/queryOrder/queryMyOrderNoComplete"
             let params = ["_json_att":""]
             let headers = ["refer": "https://kyfw.12306.cn/otn/queryOrder/initNoComplete"]
-            Service.Manager.request(.POST, url, parameters: params, headers:headers).responseJSON(completionHandler:{response in
+            Service.Manager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers:headers).responseJSON(completionHandler:{response in
                 switch (response.result){
-                case .Failure(let error):
+                case .failure(let error):
                     reject(error)
-                case .Success(let data):
+                case .success(let data):
                     let orderDBList = JSON(data)["data"]["orderDBList"]
                     MainModel.noCompleteOrderList = [OrderDTO]()
                     if orderDBList.count > 0{

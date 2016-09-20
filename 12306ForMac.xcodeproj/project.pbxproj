@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39A7F741AF1BBBC1B0E8B416 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7211EBA20157CBFCD3A071 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		533835529CC978C3E22997AF /* Pods_12306ForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FDE3827E433331C773684A /* Pods_12306ForMac.framework */; };
 		F10F47A91D409ED3004668BB /* station_name.js in Resources */ = {isa = PBXBuildFile; fileRef = F10F47A81D409ED3004668BB /* station_name.js */; };
 		F11154651C8D91F800FA6059 /* srca.cer in Resources */ = {isa = PBXBuildFile; fileRef = F11154631C8D91F800FA6059 /* srca.cer */; };
 		F11154681C8D920600FA6059 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11154671C8D920600FA6059 /* User.swift */; };
@@ -107,9 +107,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37638C4EC63999790EA677D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		4362C8555FDE04134EAB4433 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1ADA78E47C84D269D7CACD17 /* Pods-12306ForMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12306ForMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-12306ForMac/Pods-12306ForMac.release.xcconfig"; sourceTree = "<group>"; };
 		4E7211EBA20157CBFCD3A071 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FDE3827E433331C773684A /* Pods_12306ForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12306ForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9F5EA17DF5E68E82AB2CC6 /* Pods-12306ForMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12306ForMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-12306ForMac/Pods-12306ForMac.debug.xcconfig"; sourceTree = "<group>"; };
 		F10F47A81D409ED3004668BB /* station_name.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = station_name.js; path = 12306ForMac/station_name.js; sourceTree = "<group>"; };
 		F11154621C8D91F800FA6059 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F11154631C8D91F800FA6059 /* srca.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = srca.cer; sourceTree = "<group>"; };
@@ -226,28 +227,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39A7F741AF1BBBC1B0E8B416 /* Pods.framework in Frameworks */,
+				533835529CC978C3E22997AF /* Pods_12306ForMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		261B13F41F4566381D40C5BA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				37638C4EC63999790EA677D6 /* Pods.debug.xcconfig */,
-				4362C8555FDE04134EAB4433 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7EE5AE4095B588D2CBD04072 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4E7211EBA20157CBFCD3A071 /* Pods.framework */,
+				B4FDE3827E433331C773684A /* Pods_12306ForMac.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F034B7C3DC677408D9666A92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB9F5EA17DF5E68E82AB2CC6 /* Pods-12306ForMac.debug.xcconfig */,
+				1ADA78E47C84D269D7CACD17 /* Pods-12306ForMac.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F11154611C8D91B300FA6059 /* 12306ForMac */ = {
@@ -407,8 +409,8 @@
 				F1E7EA201C5A2E7B007715C1 /* INAppStoreWindow */,
 				F11154611C8D91B300FA6059 /* 12306ForMac */,
 				F11EB45B1B6A368E000063E4 /* Products */,
-				261B13F41F4566381D40C5BA /* Pods */,
 				7EE5AE4095B588D2CBD04072 /* Frameworks */,
+				F034B7C3DC677408D9666A92 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -535,13 +537,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F11EB4741B6A368E000063E4 /* Build configuration list for PBXNativeTarget "12306ForMac" */;
 			buildPhases = (
-				01EFCD70E9D7C95CBA6F6FC8 /* Check Pods Manifest.lock */,
+				CDEE12B97339457F930CDDED /* [CP] Check Pods Manifest.lock */,
 				F11EB4561B6A368E000063E4 /* Sources */,
 				F11EB4571B6A368E000063E4 /* Frameworks */,
 				F11EB4581B6A368E000063E4 /* Resources */,
-				29751BBD7219098990551AF9 /* Copy Pods Resources */,
-				F2F0DE1760B0AA8F071CBCAB /* Embed Pods Frameworks */,
 				F112059F1D1259F300F93E81 /* ShellScript */,
+				C0B97BD66EFD141AA214CE9B /* [CP] Embed Pods Frameworks */,
+				5DF8924B81B1D78A2511176C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -566,6 +568,7 @@
 					F11EB4591B6A368E000063E4 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = B88D2XN634;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -622,34 +625,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01EFCD70E9D7C95CBA6F6FC8 /* Check Pods Manifest.lock */ = {
+		5DF8924B81B1D78A2511176C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-12306ForMac/Pods-12306ForMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		29751BBD7219098990551AF9 /* Copy Pods Resources */ = {
+		C0B97BD66EFD141AA214CE9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-12306ForMac/Pods-12306ForMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDEE12B97339457F930CDDED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F112059F1D1259F300F93E81 /* ShellScript */ = {
@@ -664,21 +682,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 7f773767251f31dd54542d6b38e72c20ca29d640 1e0dbb53cb98c8975674853ab4ea266903fe9cbe537883397ded2988ec25a7ac";
-		};
-		F2F0DE1760B0AA8F071CBCAB /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -822,7 +825,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -861,7 +864,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -869,7 +872,7 @@
 		};
 		F11EB4751B6A368E000063E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37638C4EC63999790EA677D6 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = CB9F5EA17DF5E68E82AB2CC6 /* Pods-12306ForMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -879,19 +882,20 @@
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 12306ForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = fancymax.12306ForMac;
 				PRODUCT_NAME = 12306ForMac;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "12306ForMac-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "12306ForMac-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F11EB4761B6A368E000063E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4362C8555FDE04134EAB4433 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1ADA78E47C84D269D7CACD17 /* Pods-12306ForMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -901,12 +905,13 @@
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 12306ForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = fancymax.12306ForMac;
 				PRODUCT_NAME = 12306ForMac;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "12306ForMac-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "12306ForMac-Swift.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -18,7 +18,7 @@ class TicketTask:Object{
     
     dynamic var fromStationName = "深圳"
     dynamic var toStationName = "福州"
-    dynamic var date = NSDate()
+    dynamic var date = Date()
     var trainCodeArr = List<Train>()
     var seatArr = List<Seat>()
     var passengerArr = List<Passenger>()
