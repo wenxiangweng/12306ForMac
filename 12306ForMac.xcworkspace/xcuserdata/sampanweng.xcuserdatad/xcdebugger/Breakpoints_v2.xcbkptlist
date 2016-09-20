@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12306ForMac/Service/Service+Login.swift"
+            timestampString = "496062570.449616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "loginUserWith(_:passWord:randCodeStr:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12306ForMac/Service/Service+Login.swift"
+            timestampString = "496062582.340767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "loginUserWith(_:passWord:randCodeStr:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12306ForMac/Service/Service+Login.swift"
+            timestampString = "496062681.817873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "preLoginFlow(success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_2306ForMac.Service.preLoginFlow (success : (__ObjC.NSImage) -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "12306ForMac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sampanweng/Develop/github/12306ForMac/12306ForMac/Service/Service+Login.swift"
+                  timestampString = "496062758.404405"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_2306ForMac.Service.(preLoginFlow (success : (__ObjC.NSImage) -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "12306ForMac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sampanweng/Develop/github/12306ForMac/12306ForMac/Service/Service+Login.swift"
+                  timestampString = "496062758.40548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12306ForMac/Service/Service+Login.swift"
+            timestampString = "496062684.795128"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loginFlow(user:passWord:randCodeStr:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_2306ForMac.Service.loginFlow (user : Swift.String, passWord : Swift.String, randCodeStr : Swift.String, success : () -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "12306ForMac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sampanweng/Develop/github/12306ForMac/12306ForMac/Service/Service+Login.swift"
+                  timestampString = "496062758.408478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_2306ForMac.Service.(loginFlow (user : Swift.String, passWord : Swift.String, randCodeStr : Swift.String, success : () -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "12306ForMac"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sampanweng/Develop/github/12306ForMac/12306ForMac/Service/Service+Login.swift"
+                  timestampString = "496062758.40954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
