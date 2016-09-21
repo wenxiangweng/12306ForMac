@@ -6,6 +6,9 @@ Mac版12306 订票/捡票 软件。
 #系统
 OS X10.10以上
 
+#Swift
+Swift 3.0
+
 #功能
 目前仅完成了基础的订票 和 捡票 功能，后续还会继续补充功能。
 
@@ -16,7 +19,7 @@ OS X10.10以上
 
 #开发
 1. OS X 10.11.*
-2. Xcode 7.3.*
+2. Xcode 8.*
 3. 工具：[CocoaPods](https://cocoapods.org/)
 4. 复制项目：$ git clone --recursive https://github.com/fancymax/12306ForMac.git
 5. 安装依赖：$ pod install
